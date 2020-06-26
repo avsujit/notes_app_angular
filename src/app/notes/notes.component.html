@@ -1,0 +1,19 @@
+<mat-grid-list cols="4">
+  <app-notes-header
+    (headerActionTrigger)="handleHeaderActionTrigger($event)"
+  ></app-notes-header>
+  <mat-grid-tile class="notesWrapper" colspan="1">
+    <app-note-display-card
+      *ngFor="let note of notes$ | async"
+      [id]="note.id"
+      [data]="note.notes"
+      (click)="activeNote = note"
+    ></app-note-display-card
+  ></mat-grid-tile>
+  <mat-grid-tile class="notesWrapper" colspan="3"
+    ><app-scribble-pad
+      *ngIf="activeNote"
+      [data]="activeNote.notes"
+    ></app-scribble-pad
+  ></mat-grid-tile>
+</mat-grid-list>

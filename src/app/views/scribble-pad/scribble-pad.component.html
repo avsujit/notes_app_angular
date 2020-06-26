@@ -1,0 +1,9 @@
+<mat-form-field atyle="width :100%">
+    <mat-label>Autosize textarea</mat-label>
+    <textarea matInput
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="20"
+              [(ngModel)]="data"
+              cdkAutosizeMaxRows="100"></textarea>
+  </mat-form-field>
